@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- 10
+sudo: required
+branches:
+  only:
+  - master
+install:
+- yarn --ignore-engines
+script:
+- yarn run build
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  buildpack: nodejs
+  api_key:
+    secure: "$HEROKU_KEY"
+  app: "$HEROKU_APP"

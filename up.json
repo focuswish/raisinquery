@@ -1,0 +1,16 @@
+{
+  "name": "stackerror-app",
+  "lambda": {
+    "memory": 1536
+  },
+  "stages": {
+    "staging": {
+      "domain": "dev.stackerror.io",
+      "zone": "dev.stackerror.io"
+    },
+    "production": {
+      "domain": "stackerror.io",
+      "zone": "stackerror.io"
+    }
+  }
+}

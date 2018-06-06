@@ -1,0 +1,52 @@
+{
+  "name": "stackerror",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "10.x"
+  },
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "node server",
+    "build": "next build",
+    "start": "NODE_ENV=production node server",
+    "clean": "rimraf .next && rimraf dist",
+    "lint": "standard \"src/*.js\" --fix | snazzy",
+    "deploy": "node bin/up.js"
+  },
+  "author": "Ben Gardner <ben@focuswish.com> (http://www.automationfuel.com)",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-sass": "^0.2.0",
+    "cors": "^2.8.4",
+    "dotenv": "6.0.0",
+    "express": "^5.0.0-alpha.6",
+    "glob": "^7.1.2",
+    "highlight.js": "^9.12.0",
+    "htmlescape": "^1.1.1",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash.get": "^4.4.2",
+    "lodash.isempty": "^4.4.0",
+    "lodash.last": "^3.0.0",
+    "marked": "0.4.0",
+    "next": "^6.0.4-canary.3",
+    "query-string": "^5.0.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "truncatise": "^0.0.6",
+    "yale": "^1.1.2"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-preset-minify": "^0.4.3",
+    "execa": "^0.10.0",
+    "fs-extra": "^6.0.1",
+    "node-sass": "^4.9.0",
+    "rimraf": "^2.6.2",
+    "snazzy": "^7.1.1",
+    "standard": "^10.0.3"
+  }
+}
