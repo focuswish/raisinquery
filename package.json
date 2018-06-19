@@ -8,11 +8,10 @@
   "main": "server/index.js",
   "scripts": {
     "dev": "node server",
-    "build": "next build",
+    "build": "up-env load && NODE_ENV=production next build",
     "start": "NODE_ENV=production node server",
     "clean": "rimraf .next",
-    "lint": "standard \"src/*.js\" --fix | snazzy",
-    "deploy:prod": "NODE_ENV=production up-env load && up deploy production"
+    "lint": "standard \"src/*.js\" --fix | snazzy"
   },
   "author": "Ben Gardner <ben@focuswish.com> (http://www.automationfuel.com)",
   "license": "ISC",
