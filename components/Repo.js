@@ -18,7 +18,7 @@ function Repo (props) {
 
   return (
     <div
-      className='row bg gutter-10 pad-10'
+      className='se-row se-bg se-gutter-10 se-pad-10'
       style={{
         alignItems: 'center',
         justifyContent: 'space-between'
@@ -28,7 +28,7 @@ function Repo (props) {
         <img src={avatarUrl} width='40' height='40' style={{marginRight: '10px'}} />
         <a href={`${env.BASE_URI}/repos/${fullName}`}>{name}</a>
       </div>
-      <div className='row space-between' style={{width: '50%'}}>
+      <div className='se-row se-space-between' style={{width: '50%'}}>
         <Icon
           label={repo.stars}
           link={link}

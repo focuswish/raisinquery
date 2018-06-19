@@ -24,7 +24,7 @@ function GithubIssue (props) {
       }}
       onClick={() => handleExpand(issue.id)}
       id={issue.id}
-      className={'github-issue column widget'}
+      className={'se-github-issue se-column se-widget'}
     >
       <h3
         key={issue.id}
@@ -34,7 +34,7 @@ function GithubIssue (props) {
       </h3>
 
       <div
-        className='row gutter space-between'
+        className='se-row se-gutter se-space-between'
         style={{
           alignItems: 'center',
           width: '100%'
@@ -54,7 +54,7 @@ function GithubIssue (props) {
       <WidgetContent html={html} isExpanded={isExpanded} />
 
       <div
-        className='row'
+        className='se-row'
         style={{
           fontSize: '14px'
         }}

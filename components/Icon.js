@@ -8,11 +8,11 @@ function Icon (props) {
   } = props
 
   return (
-    <div className='row space-between'>
-      <span className='margin-right'>
-        <a className='link-muted' href={link}>{label}</a>
+    <div className='se-row se-space-between'>
+      <span className='se-margin-right'>
+        <a className='se-link-muted' href={link}>{label}</a>
       </span>
-      <i className={`fa ${icon} large`} aria-hidden='true' />
+      <i className={`fa ${icon} se-large`} aria-hidden='true' />
     </div>
   )
 }

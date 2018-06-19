@@ -6,18 +6,18 @@ import env from '../../lib/env'
 const Message = ({ message, messages }) => (
   <div
     key={`related_pages_div_${message.id}`}
-    className='pad-10'
+    className='se-pad-10'
     style={{
       borderBottom: '1px solid rgba(27, 31, 35, 0.15)'
     }}
   >
     <a
-      className='link'
+      className='se-link'
       key={`related_pages_a_${message.id}`}
       href={`${env.BASE_URI}/${message.id}/${message.slug}`}
     >
-      <div className='flex space-between flex-row-center'>
-        <i className='fa fa-exclamation large margin-right' aria-hidden='true' />
+      <div className='se-flex se-space-between se-flex-row-center'>
+        <i className='fa fa-exclamation se-large se-margin-right' aria-hidden='true' />
         <span>{atob(message.message)}</span>
       </div>
     </a>
@@ -40,12 +40,12 @@ class Messages extends React.Component {
     if (!messages || isEmpty(messages)) return false
 
     return (
-      <div style={{...style, overflow: 'hidden'}} className='column border'>
-        <div className='border-bottom bg pad-10'>
+      <div style={{...style, overflow: 'hidden'}} className='se-column se-border'>
+        <div className='se-border-bottom se-bg se-pad-10'>
           <h3 style={{margin: 0}}>{title}</h3>
         </div>
         {messages.map((message, i) =>
-          <Message message={message} messages={messages} />
+          <Message message={message} messages={messages} key={i} />
         )}
       </div>
     )

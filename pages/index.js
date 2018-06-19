@@ -51,7 +51,7 @@ export default class App extends React.Component {
     return (
       <Layout>
         <div
-          className='stackerror-grid'
+          className='se-grid'
           style={{
             justifyContent: 'space-between',
             flexWrap: 'wrap'

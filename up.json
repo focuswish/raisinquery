@@ -3,14 +3,26 @@
   "lambda": {
     "memory": 1536
   },
+  "regions": ["us-west-2"],
+  "environment": {
+    "SE_CLIENT_KEY": "${ssm:/stackerror-app/SE_CLIENT_KEY}",
+    "GITHUB_CLIENT_ID": "${ssm:/stackerror-app/GITHUB_CLIENT_ID}",
+    "GITHUB_CLIENT_SECRET": "${ssm:/stackerror-app/GITHUB_CLIENT_SECRET}",
+    "GITHUB_TOKEN": "${ssm:/stackerror-app/GITHUB_TOKEN}",
+    "AWS_LAMBDA_ENDPOINT": "${ssm:/stackerror-app/AWS_LAMBDA_ENDPOINT}",
+    "PROD_BASE_URI": "https://stackerror.io"
+  },
   "stages": {
     "staging": {
       "domain": "dev.stackerror.io",
-      "zone": "dev.stackerror.io"
+      "zone": "stackerror.io"
     },
     "production": {
       "domain": "stackerror.io",
       "zone": "stackerror.io"
     }
+  },
+  "hooks": {
+    "clean": "up-env restore"
   }
 }

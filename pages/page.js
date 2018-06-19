@@ -21,7 +21,7 @@ export default class Page extends React.Component {
 
   highlightCode = () => {
     const domNode = ReactDOM.findDOMNode(this)
-    const nodes = domNode.querySelectorAll('pre.code-snippet code')
+    const nodes = domNode.querySelectorAll('pre.se-code-snippet code')
     let i
     for (i = 0; i < nodes.length; i++) {
       hljs.highlightBlock(nodes[i])
@@ -41,14 +41,14 @@ export default class Page extends React.Component {
         <PageTitle data={data} />
         <Repo repo={repo} />
         <div
-          className='row gutter mobile'
+          className='se-row se-gutter se-mobile'
           style={{
             justifyContent: 'space-between'
           }}>
           <CodeSnippet message={data} />
           <Messages messages={messages} style={{flexBasis: `40%`}} />
         </div>
-        <div className='row mobile space-between'>
+        <div className='se-row se-mobile se-space-between'>
           <GithubIssuesWidget issues={data.issues} />
           <StackOverflowWidget questions={data.questions} />
         </div>

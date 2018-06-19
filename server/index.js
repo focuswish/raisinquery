@@ -3,21 +3,15 @@ const express = require('express')
 const next = require('next')
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
-const dir = require('path').join(__dirname, '../dist')
 const app = next({ dev })
 const handle = app.getRequestHandler()
 const queryString = require('query-string')
 const github = require('./github')
-// const Yale = require('yale').Cache
-// const yale = new Yale(dev ? undefined : process.env.REDIS_URL)
-
 const fetch = require('isomorphic-fetch')
 
 async function init () {
   await app.prepare()
   const server = express()
-  // const cache = yale.express(1e10)
-
   server.get('/favicon.ico', (req, res) => {
     res.status(204)
   })
@@ -57,7 +51,6 @@ async function init () {
     let json
     let { repo } = req.params
     let { q } = req.query
-    let key = process.env.SE_CLIENT_KEY
     let url = `https://api.stackexchange.com/2.2/search/advanced?`
 
     url += queryString.stringify({

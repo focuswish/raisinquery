@@ -7,13 +7,13 @@ function CodeSnippetHeader (props) {
 
   return (
     <div
-      className='row'
+      className='se-row'
       style={{
         justifyContent: 'flex-end',
         alignItems: 'center'
       }}>
       <a
-        className='small'
+        className='se-small'
         href={htmlUrl} style={{
           color: '#586069',
           textDecoration: 'none'
@@ -45,11 +45,11 @@ function CodeSnippet (props) {
   lines = lines.map(line => line === '//' ? '' : line)
 
   return (
-    <section style={{...style}} className='margin-right code'>
+    <section style={{...style}} className='se-margin-right se-code'>
       <CodeSnippetHeader
         htmlUrl={htmlUrl}
       />
-      <pre className='code-snippet'>
+      <pre className='se-code-snippet'>
         {lines.map((line, i) => <code
           style={styles(i)}
           key={`code_${i}`}

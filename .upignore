@@ -1,1 +1,6 @@
 !.next
+serverless
+.vscode
+bin
+.travis
+.env

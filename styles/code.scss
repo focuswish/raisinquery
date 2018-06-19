@@ -12,7 +12,7 @@ pre code {
 }
 
 @for $i from 1 through 10 {
-   pre.code-snippet code:nth-of-type(#{$i}):before {
+   pre.se-code-snippet code:nth-of-type(#{$i}):before {
     content: " #{$i}";
     color: rgba(27,31,35,0.3);
   }

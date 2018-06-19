@@ -1,6 +1,5 @@
 const { stringify } = require('query-string')
 const fetch = require('node-fetch')
-const get = require('lodash.get')
 const { log } = require('./util')
 const dynamo = require('dynamodb-tools')({ prefix: 'stackerror-dev-' })
 
@@ -34,8 +33,6 @@ function getStats (fullName) {
 
 const handler = {
   repo: async ({ fullName }) => {
-    console.log({ fullName })
-    // let repo = await dynamo.database().get('repos', { id: id + '' })
     let [repo] = await dynamo.database().get('repos', { fullName: fullName })
 
     let messages = await dynamo.database().get('messages', { repoId: repo.id })
@@ -70,10 +67,6 @@ const handler = {
 function endpoint (name, shouldCache = true) {
   return async function (evt, ctx, cb) {
     let { queryStringParameters } = evt
-    console.log({ queryStringParameters })
-    // const cache = new yale.Cache(process.env.REDIS_URL)
-    // dynamo.use(cache.dynamoDb(shouldCache ? 1e10 : 0), 'dynamodb')
-    // console.log(cache)
 
     let data = {}
     try {
@@ -81,7 +74,6 @@ function endpoint (name, shouldCache = true) {
     } catch (error) {
       data = { error }
     }
-    // cache.end()
     cb(null,
       createResponse(
         data

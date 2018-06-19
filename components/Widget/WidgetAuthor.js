@@ -9,7 +9,7 @@ function WidgetAuthor (props) {
 
   return (
     <div
-      className='row space-between'
+      className='se-row se-space-between'
       style={{
         alignItems: 'center'
       }}>

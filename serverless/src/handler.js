@@ -121,7 +121,6 @@ class Handler {
 
   async init () {
     let { items } = await this.search()
-    // cache.client.quit()
 
     if (!empty(items)) {
       items = items.filter(item =>

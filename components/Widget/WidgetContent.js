@@ -5,7 +5,7 @@ function WidgetContent (props) {
   if (!isExpanded) return false
 
   return (
-    <div className='row'>
+    <div className='se-row'>
       <div dangerouslySetInnerHTML={{ __html: html }} style={{maxWidth: '100%'}} />
     </div>
   )

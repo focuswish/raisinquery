@@ -19,7 +19,7 @@ function StackOverflowEntry (props) {
 
   return (
     <div
-      className='hover column widget'
+      className='se-hover se-column se-widget'
       style={{
         justifyContent: 'space-between'
       }} onClick={() => handleExpand(question.question_id)}>
@@ -29,7 +29,7 @@ function StackOverflowEntry (props) {
         dangerouslySetInnerHTML={{ __html: question.title }}
       />
       <div
-        className='row gutter space-between flex-row-center'
+        className='se-row se-gutter se-space-between se-flex-row-center'
         style={{
           width: '100%'
         }}
@@ -69,7 +69,7 @@ class StackOverflowWidget extends React.Component {
     return (
       <div
         style={{flexBasis: 'calc(50% - 20px)', maxWidth: 'calc(50% - 20px)'}}
-        className='column'
+        className='se-column'
       >
         <WidgetTitle title={'StackOverflow Questions'} icon='fa-stack-overflow' />
         <div>{questions.map(question =>

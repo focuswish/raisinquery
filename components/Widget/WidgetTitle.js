@@ -8,7 +8,7 @@ function WidgetTitle (props) {
 
   return (
     <div
-      className='row space-between bg gutter'
+      className='se-row se-space-between se-bg se-gutter'
       style={{alignItems: 'center', padding: '0 10px'}}
     >
       <h3
