@@ -7,7 +7,9 @@ branches:
 install:
   - yarn --ignore-engines
   - yarn add up-env --ignore-engines
-script: 
+before_script:
+  - up-env load
+script:
   - yarn add travis-up
 before_deploy:
   - ./bin/up version
