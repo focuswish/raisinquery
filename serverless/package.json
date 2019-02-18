@@ -29,21 +29,7 @@
     "post-id": "^0.0.1",
     "query-string": "^5.0.1",
     "s3-tools": "^0.0.14",
-    "slugify": "^1.2.8",
-    "yale": "^1.1.12"
+    "slugify": "^1.2.8"
   },
-  "devDependencies": {
-    "@babel/core": "^7.0.0-beta.39",
-    "@babel/preset-env": "^7.0.0-beta.39",
-    "babel-eslint": "^8.2.1",
-    "babel-loader": "8.0.0-beta.0",
-    "babel-preset-aws-lambda": "^1.0.2",
-    "eslint-plugin-flowtype": "^2.43.0",
-    "serverless": "^1.25.0",
-    "serverless-offline": "^3.16.0",
-    "serverless-webpack": "^4.3.0",
-    "standard": "^10.0.3",
-    "webpack": "^3.11.0",
-    "webpack-node-externals": "^1.6.0"
-  }
+  "devDependencies": {}
 }

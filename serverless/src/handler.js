@@ -28,7 +28,6 @@ class Handler {
   }
 
   async getRepos () {
-    console.log('getRepos()')
     let { page, index } = this.state.repos
 
     let url = 'https://api.github.com/search/repositories?' + stringify({
@@ -38,7 +37,6 @@ class Handler {
       order: 'desc',
       page: page
     })
-    console.log(url)
     let items = await fetch(url)
       .then(resp => resp.json())
       .then(json => json.items.filter(repo =>
@@ -87,13 +85,10 @@ class Handler {
 
   async search () {
     this.query = terms[this.state.terms.index]
-    console.log(this.query)
     let repo = await this.getRepos()
-    console.log(repo.full_name)
     let url = 'https://api.github.com/search/code?'
     url += `&q=${encodeURIComponent(this.query)}+in:file+language:js+repo:${repo.full_name}`
 
-    console.log('search()', url)
     // stringify({
     //  client_id: process.env.GITHUB_CLIENT_ID,
     //  client_secret: process.env.GITHUB_CLIENT_SECRET,
@@ -107,8 +102,6 @@ class Handler {
   }
 
   setRepo () {
-    console.log('setRepo()')
-
     let { result } = this
     return db.database().set('repos', {
       name: result.repository.name,
@@ -128,13 +121,10 @@ class Handler {
       )
     }
 
-    console.log('items.length', items.length)
-
     if (
       !items.length ||
       this.state.results.index >= (items.length - 1)
     ) {
-      console.log('returning', this.state)
       this.state.terms.index++
       this.state.results.index = 0
       return setState(this.state)
@@ -153,7 +143,6 @@ class Handler {
     let snippets = this.createSnippets()
 
     if (empty(snippets)) {
-      console.log('empty(snippets)', this.state)
       return setState(this.state)
     }
 
@@ -187,8 +176,6 @@ class Handler {
 exports.handler = async () => {
   let state = await getState()
   log.append(now() + ': ' + JSON.stringify(state))
-
-  console.log('state', state)
 
   if (state.terms.index >= terms.length) {
     state.terms.index = 0

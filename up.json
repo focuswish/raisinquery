@@ -3,7 +3,9 @@
   "lambda": {
     "memory": 1536
   },
-  "regions": ["us-west-2"],
+  "regions": [
+    "us-west-2"
+  ],
   "environment": {
     "SE_CLIENT_KEY": "${ssm:/stackerror-app/SE_CLIENT_KEY}",
     "GITHUB_CLIENT_ID": "${ssm:/stackerror-app/GITHUB_CLIENT_ID}",

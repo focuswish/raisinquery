@@ -1,16 +1,14 @@
 service: stackerror
 
-plugins:
-  - serverless-webpack
-  - serverless-offline
-
 custom:
-  webpackIncludeModules: true
+  deploymentBucket: 'global-deployment-bucket'
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   region: us-east-1
+  deploymentBucket:
+    name: ${self:custom.deploymentBucket}
   environment:
     DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
     DEBUG: true
@@ -38,10 +36,10 @@ provider:
       Resource: "*"
 
 functions:
-  github:
-    handler: src/handler.handler
-    events:
-      - schedule: rate(60 minutes)
+  #github:
+  #  handler: src/handler.handler
+  #  events:
+  #    - schedule: rate(60 minutes)
 
   repos:
     handler: src/api.repos
